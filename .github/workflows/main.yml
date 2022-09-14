@@ -72,13 +72,16 @@ jobs:
           name: expense-manager.apk
           path: app/build/outputs/apk/debug/app-debug.apk
           
-      - name: upload artefact to App Center
-        uses: wzieba/AppCenter-Github-Action@v1
-        with:
-          appName: ronakukani/Github-Actions-Demo
-          token: ${{secrets.HUB_TOKEN}}
-          group: Testers
-          file: app/build/outputs/apk/debug/expense-manager.apk
-          notifyTesters: true
-          debug: false
-          releaseNotes: "here is your release note"
+#       - name: upload artefact to App Center
+#         uses: wzieba/AppCenter-Github-Action@v1
+#         with:
+#           appName: ronakukani/Github-Actions-Demo
+#           token: ${{secrets.HUB_TOKEN}}
+#           group: Testers
+#           file: app/build/outputs/apk/debug/expense-manager.apk
+#           notifyTesters: true
+#           debug: false
+#           releaseNotes: "here is your release note"
+
+      - name: Build with Gradel
+        run: ./gradlew build
