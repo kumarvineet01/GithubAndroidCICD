@@ -72,4 +72,9 @@ jobs:
           name: expense-manager.apk
           path: app/build/outputs/apk/debug/app-debug.apk
           
-      
+      - name: Upload APK to Release
+        uses: skx/github-action-publish-binaries@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.HUB_TOKEN }}
+        with:
+          args: app/build/outputs/apk/release/**.apk  
