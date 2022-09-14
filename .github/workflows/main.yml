@@ -1,4 +1,4 @@
-name: CI
+name: CI_CD
 on:
   push:
     branches: [ master ]
@@ -85,7 +85,7 @@ jobs:
          path: app/build/outputs/apk/release/
          
       - name: Check_file & Path
-        run: ls -l android/app/build/outputs/apk/release && pwd
+        run: ls -l app/build/outputs/apk/release && pwd
           
 #       - name: upload artefact to App Center
 #         uses: wzieba/AppCenter-Github-Action@v1
@@ -97,8 +97,15 @@ jobs:
 #           notifyTesters: true
 #           debug: false
 #           releaseNotes: "here is your release note"
-     
-      
-#       - name: finding apk path
-#         run: ls -la && cd app/build/outputs/apk/release/ && ls -la
+
+
+#       - name: App Center
+#         uses: wzieba/AppCenter-Github-Action@v1.3.3
+#         with:
+#          appName: DemoApp/DemoApps
+#          token: ${{ env.APP_CENTER_TOKEN }}
+#          group: DemoApps
+#          file: app/build/outputs/apk/release/app-release.apk
+#          notifyTesters: true
+#          debug: false 
 
