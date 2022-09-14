@@ -105,7 +105,7 @@ jobs:
          appName: DemoApp/DemoApps
          token: ${{ secrets.HUB_TOKEN }}
          group: DemoApps
-         file: app/build/outputs/apk/release/app-release.apk
+         file: app/build/outputs/apk/release/app-release-unsigned.apk
          notifyTesters: true
          debug: false 
 
