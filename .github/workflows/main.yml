@@ -101,7 +101,7 @@ jobs:
 #           releaseNotes: "here is your release note"
 
   Deploy-On-AppCenter:
-      needs: [lint]
+      needs: [unit-test]
       runs-on: ubuntu-latest
       steps:
       - name: App Center
