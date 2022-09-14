@@ -102,7 +102,7 @@ jobs:
       - name: App Center
         uses: wzieba/AppCenter-Github-Action@v1.3.3
         with:
-         appName: demoapps/demoapp
+         appName: kumarvineet01/demoapp
          token: ${{ secrets.HUB_TOKEN }}
          group: demoapp
          file: app/build/outputs/apk/release/app-release-unsigned.apk
