@@ -100,7 +100,10 @@ jobs:
 #           debug: false
 #           releaseNotes: "here is your release note"
 
-
+  Deploy-On-AppCenter:
+      needs: [lint]
+      runs-on: ubuntu-latest
+      steps:
       - name: App Center
         uses: wzieba/AppCenter-Github-Action@v1.3.3
         with:
