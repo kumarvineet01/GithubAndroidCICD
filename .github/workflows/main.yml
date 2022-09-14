@@ -78,7 +78,7 @@ jobs:
           appName: ronakukani/Github-Actions-Demo
           token: ${{secrets.HUB_TOKEN}}
           group: Testers
-          file: app/build/outputs/apk/release/expense-manager.apk
+          file: app/build/outputs/apk/debug/expense-manager.apk
           notifyTesters: true
           debug: false
           releaseNotes: "here is your release note"
