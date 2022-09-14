@@ -99,13 +99,13 @@ jobs:
 #           releaseNotes: "here is your release note"
 
 
-#       - name: App Center
-#         uses: wzieba/AppCenter-Github-Action@v1.3.3
-#         with:
-#          appName: DemoApp/DemoApps
-#          token: ${{ env.APP_CENTER_TOKEN }}
-#          group: DemoApps
-#          file: app/build/outputs/apk/release/app-release.apk
-#          notifyTesters: true
-#          debug: false 
+      - name: App Center
+        uses: wzieba/AppCenter-Github-Action@v1.3.3
+        with:
+         appName: DemoApp/DemoApps
+         token: ${{ secrets.HUB_TOKEN }}
+         group: DemoApps
+         file: app/build/outputs/apk/release/app-release.apk
+         notifyTesters: true
+         debug: false 
 
