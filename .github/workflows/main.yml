@@ -64,22 +64,28 @@ jobs:
 
 
       - name: Build debug APK
-        run: ./gradlew assembleDebug --stacktrace
-      
-      - name: Build with Gradle
-        run: ./gradlew assembleRelease      
+        run: ./gradlew assembleDebug --stacktrace      
 
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
           name: expense-manager.apk
           path: app/build/outputs/apk/debug/app-debug.apk
+      - name: check_File & Path
+        run: ls -l app/build/outputs/apk/debug && pwd
+          
+      
+      - name: Build with Gradle
+        run: ./gradlew assembleRelease
           
       - name: upload apkrelease
         uses: actions/upload-artifact@v3.1.0
         with: 
          name: expense-manager.apk
          path: app/build/outputs/apk/release/
+         
+      - name: Check_file & Path
+        run: ls -l android/app/build/outputs/apk/release && pwd
           
 #       - name: upload artefact to App Center
 #         uses: wzieba/AppCenter-Github-Action@v1
@@ -93,6 +99,6 @@ jobs:
 #           releaseNotes: "here is your release note"
      
       
-      - name: finding apk path
-        run: ls -la && cd app/build/outputs/apk/release/ && ls -la
+#       - name: finding apk path
+#         run: ls -la && cd app/build/outputs/apk/release/ && ls -la
 
