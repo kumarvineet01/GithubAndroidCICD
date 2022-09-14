@@ -76,7 +76,17 @@ jobs:
       - name: check_File & Path
         run: ls -l app/build/outputs/apk/debug && pwd
           
-      
+      - name: Build with Gradle
+        run: ./gradlew assembleRelease
+          
+      - name: upload apkrelease
+        uses: actions/upload-artifact@v3.1.0
+        with: 
+         name: expense-manager.apk
+         path: app/build/outputs/apk/release/
+         
+      - name: Check_file & Path
+        run: ls -l app/build/outputs/apk/release && pwd     
 
           
 #       - name: upload artefact to App Center
@@ -90,22 +100,8 @@ jobs:
 #           debug: false
 #           releaseNotes: "here is your release note"
 
-  Deploy-On-AppCenter:
-      needs: [unit-test]
-      runs-on: ubuntu-latest
-      steps:
       
-      - name: Build with Gradle
-        run: ./gradlew assembleRelease
-          
-      - name: upload apkrelease
-        uses: actions/upload-artifact@v3.1.0
-        with: 
-         name: expense-manager.apk
-         path: app/build/outputs/apk/release/
-         
-      - name: Check_file & Path
-        run: ls -l app/build/outputs/apk/release && pwd
+
       - name: App Center
         uses: wzieba/AppCenter-Github-Action@v1.3.3
         with:
