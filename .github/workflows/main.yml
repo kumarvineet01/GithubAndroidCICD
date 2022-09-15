@@ -5,8 +5,8 @@ on:
   pull_request:
     branches: [ master ]
   workflow_dispatch:
-env:
- APP_CENTER_TOKEN: ${{ secrets.APP_CENTER_TOKEN }} 
+# env:
+#  APP_CENTER_TOKEN: ${{ secrets.APP_CENTER_TOKEN }} 
 
 jobs:
   lint:
@@ -106,7 +106,7 @@ jobs:
         uses: wzieba/AppCenter-Github-Action@v1.3.3
         with:
          appName: kumarvineet011/demoapp
-         token: ${{env.APP_CENTER_TOKEN}}
+         token: ${{secrets.APP_CENTER_TOKEN}}
          group: demoapp
          file: app/build/outputs/apk/release/app-release-unsigned.apk
          notifyTesters: true
