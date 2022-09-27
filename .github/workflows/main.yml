@@ -88,8 +88,8 @@ jobs:
       - name: Check_file & Path
         run: ls -l app/build/outputs/apk/release && pwd
         
-      - name: Checking Token visibility.
-        run: echo "Chheking Token $APP_CENTER_TOKEN  "
+#       - name: Checking Token visibility.
+#         run: echo "Chheking Token $APP_CENTER_TOKEN  "
 
           
 #       - name: upload artefact to App Center
