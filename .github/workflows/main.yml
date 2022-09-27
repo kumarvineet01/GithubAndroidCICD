@@ -89,7 +89,7 @@ jobs:
         run: ls -l app/build/outputs/apk/release && pwd
         
       - name: Checking Token visibility.
-        run: echo $secrets.APP_CENTER_TOKEN
+        run: echo $APP_CENTER_TOKEN
 
           
 #       - name: upload artefact to App Center
